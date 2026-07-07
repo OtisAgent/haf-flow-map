@@ -1,1 +1,74 @@
-<h1>test</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HAF — Page Flow Map</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:13px/1.5 system-ui,sans-serif;background:#F8F9FB;color:#111827}
+#hdr{background:#111827;color:#fff;padding:12px 20px;font-size:15px;font-weight:700;border-bottom:3px solid #F97316;position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center}
+#hdr span{color:#F97316}
+#hdr small{font-size:11px;color:#9CA3AF;font-weight:400}
+#leg{background:#fff;border-bottom:1px solid #E5E7EB;padding:8px 20px;display:flex;gap:14px;flex-wrap:wrap;font-size:11px;align-items:center}
+#leg b{color:#374151}
+.ld{width:9px;height:9px;border-radius:2px;display:inline-block;margin-right:3px;vertical-align:middle}
+#stats{display:flex;gap:16px;flex-wrap:wrap;padding:12px 20px;background:#fff;border-bottom:1px solid #E5E7EB}
+.st b{display:block;font-size:20px;font-weight:800;line-height:1.1}
+.st span{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#6B7280}
+.warn{margin:12px 20px;padding:8px 12px;background:#FFFBEB;border:1.5px solid #FDE68A;border-radius:8px;font-size:12px;color:#92400E}
+#page{max-width:1400px;margin:0 auto;padding:12px 20px}
+.lhdr{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#6B7280;margin:16px 0 6px;display:flex;align-items:center;gap:8px}
+.lhdr::after{content:'';flex:1;height:1px;background:#E5E7EB}
+.grid{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.grp{background:#fff;border:1.5px solid #E5E7EB;border-radius:10px;padding:10px;flex:1;min-width:230px}
+.grp-hdr{font-size:12px;font-weight:700;padding:4px 8px;border-radius:6px;margin-bottom:6px}
+.gk{background:#FFF7ED;color:#C2410C;border:1.5px solid #FED7AA}
+.gp{background:#F0FDF4;color:#166534;border:1.5px solid #BBF7D0}
+.gc{background:#EFF6FF;color:#1E40AF;border:1.5px solid #BFDBFE}
+.ga{background:#F5F3FF;color:#4C1D95;border:1.5px solid #DDD6FE}
+.gs{background:#EFF6FF;color:#1E3A8A;border:1.5px solid #BFDBFE}
+.grp-sub{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#9CA3AF;margin:6px 0 3px 2px}
+.nrow{display:flex;gap:5px;flex-wrap:wrap}
+.n{border-radius:7px;border:1.5px solid transparent;padding:5px 8px;position:relative;min-width:105px;max-width:165px;cursor:default}
+.n .nt{font-size:11px;font-weight:600;line-height:1.3;padding-right:14px}
+.n .nr{font-size:9px;font-family:monospace;opacity:.7;margin-top:1px}
+.n .ni{position:absolute;top:4px;right:5px;font-size:10px}
+.miss{background:#FEF2F2;border-color:#FECACA;color:#991B1B}
+.prog{background:#FFFBEB;border-color:#FDE68A;color:#92400E}
+.done{background:#F0FDF4;border-color:#BBF7D0;color:#166534}
+.sys{background:#F5F3FF;border-color:#DDD6FE;color:#4C1D95}
+.shr{background:#EFF6FF;border-color:#BFDBFE;color:#1E3A8A}
+.star{background:#FFF7ED;border-color:#F97316;color:#7C2D12}
+.arr{color:#9CA3AF;font-size:13px;align-self:center;flex-shrink:0;padding:0 2px}
+.note{font-size:11px;color:#6B7280;text-align:center;padding:20px 0 8px}
+.rail{background:#EFF6FF;border:1.5px solid #BFDBFE;border-radius:10px;padding:10px 14px;margin-bottom:10px}
+.rail-hdr{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:#1E40AF;margin-bottom:6px}
+@media(max-width:700px){.grp{min-width:100%}#page{padding:8px 10px}}
+</style>
+</head>
+<body>
+<div id="hdr">HAF System — <span>Page Flow Map</span><small>KNECT · PLNA · CleverPay · 7 Jul 2026</small></div>
+<div id="leg">
+  <b>Status:</b>
+  <span><span class="ld" style="background:#EF4444"></span>❌ Not built</span>
+  <span><span class="ld" style="background:#F59E0B"></span>🟡 In progress</span>
+  <span><span class="ld" style="background:#22C55E"></span>✅ Complete</span>
+  <span><span class="ld" style="background:#8B5CF6"></span>⚙️ System logic</span>
+  <span><span class="ld" style="background:#3B82F6"></span>🔗 Shared</span>
+</div>
+<div id="stats">
+  <div class="st"><b>134</b><span>Total</span></div>
+  <div class="st"><b style="color:#EF4444">134</b><span>Not built ❌</span></div>
+  <div class="st"><b style="color:#F59E0B">0</b><span>In progress</span></div>
+  <div class="st"><b style="color:#22C55E">0</b><span>Complete ✅</span></div>
+  <div class="st"><b style="color:#F97316">55</b><span>KNECT</span></div>
+  <div class="st"><b style="color:#22C55E">48</b><span>PLNA</span></div>
+  <div class="st"><b style="color:#3B82F6">19</b><span>CleverPay</span></div>
+  <div class="st"><b style="color:#8B5CF6">12</b><span>Shared</span></div>
+</div>
+<div class="warn"><b>Build rule:</b> Nothing moves to ✅ until desktop + mobile + route + nav + data + access rules + forms + empty states are all done.</div>
+<div id="page"></div>
+<script src="app.js"></script>
+</body>
+</html>
