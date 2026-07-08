@@ -25,7 +25,7 @@ h+=row(
   n('HAF Master Identity','haf_users / haf_user_roles','shr')+
   n('Role-Based Access Control','System logic','shr')+
   n('Access Code Gate','/access → Otis247','shr')+
-  n('HAF Username System','Initials+last4phone+DOByr','shr')+
+  n('HAF Username System','Initials+last4phone+DOByr','done')+
   n('WhatsApp Number Match','Phone must match username','shr')+
   n('Clever Checked Gate','cleverpay_rag_status','shr')
 );
@@ -34,8 +34,8 @@ h+='</div>';
 // LAYER 1
 h+=lhdr(1);
 h+='<div class="grid">';
-h+=grp('🟠 HAF KNECT','k',row(n('KNECT Landing','knect.usehaf.co.uk')+arr()+n('Access Code','/access · Otis247')));
-h+=grp('🟢 HAF PLNA','p',row(n('PLNA Landing','plna.usehaf.co.uk')+arr()+n('Access Code','/access · Otis247')));
+h+=grp('🟠 HAF KNECT','k',row(n('KNECT Landing','knect.usehaf.co.uk','prog')+arr()+n('Access Code','/access · Otis247')));
+h+=grp('🟢 HAF PLNA','p',row(n('PLNA Landing','plna.usehaf.co.uk','done')+arr()+n('Access Code','/access · Otis247')));
 h+='<div class="grp" style="border-color:#FDE68A;background:#FFFBEB;flex:0.5;min-width:160px"><div class="grp-hdr" style="background:#FEF3C7;color:#92400E;border:1.5px solid #FDE68A">⚠️ Launch only</div>'+n('Waitlist','launch.usehaf.co.uk only','prog')+'</div>';
 h+=grp('🔵 CleverPay','c',n('Admin access only','No public landing','sys'));
 h+='</div>';
@@ -43,7 +43,7 @@ h+='</div>';
 // LAYER 2
 h+=lhdr(2);
 h+=row(
-  n('Login','/login')+arr()+n('Sign Up','/signup')+arr()+n('HAF Username / ID','/haf-id')+arr()+
+  n('Login','/login','done')+arr()+n('Sign Up','/signup')+arr()+n('HAF Username / ID','/haf-id')+arr()+
   n('Account Confirmed','/account-created')+arr()+n('Founder Activation','/founder-access')+arr()+
   n('Forgot Password','/forgot-password')+arr()+n('Legal / Consent','/legal')
 );
@@ -72,19 +72,19 @@ h+=grp('🟢 PLNA — Driver','p',
   sub('Onboarding (runs once)')+
   row(n('Start','/onboarding')+arr()+n('Details','/onboarding/details')+arr()+n('Vehicle + Docs','/onboarding/vehicle')+arr()+n('WhatsApp Link','/onboarding/whatsapp')+arr()+n('Compliance Link','/onboarding/compliance')+arr()+n('Done','/onboarding/complete'))+
   sub('Core Planning (daily use)')+
-  row(n('PLNA Dashboard','/dashboard')+n('Today','/today')+n('Week Planner','/week')+n('Calendar','/calendar')+n('Availability','/availability')+n('Return Routes','/return-routes')+n('Route Planner','/route-planner'))+
+  row(n('PLNA Dashboard','/dashboard','done')+n('Today','/today','done')+n('Week Planner','/week','prog')+n('Calendar','/calendar','done')+n('Availability','/availability','done')+n('Return Routes','/return-routes')+n('Route Planner','/route-planner'))+
   sub('Jobs — gated by Clever Checked')+
   row(n('Clever Checked?','Gate check','sys')+arr()+n('Job Opportunities','/opportunities')+arr()+n('My Jobs','/my-jobs'))+
   sub('AI Layer (Plus/Pro)')+row(n('Ask JUDD','/ask-judd')+n('AI Daily Plan','/ai/daily-plan')+n('AI Job Match','/ai/job-match'))+
-  sub('Membership & Money')+row(n('Pricing','/pricing · Lite/Plus/Pro')+n('Membership','/membership')+n('Earnings','/earnings')+n('Rewards / Pool','/rewards'))
+  sub('Public Booking')+row(n('Driver Booking Link','/book?driver=USERNAME','done')+arr()+n('Tier gates','Free·Plus·Pro','done'))+sub('Membership & Money')+row(n('Pricing','/pricing · Lite/Plus/Pro','done')+n('Membership','/membership')+n('Earnings','/earnings')+n('Rewards / Pool','/rewards'))
 );
 
 h+=grp('🔵 CleverPay (Compliance)','c',
   sub('Admin facing')+row(n('CP Dashboard','/cleverpay')+n('Overview','/cleverpay/overview')+n('Driver Directory','/cleverpay/drivers')+n('Driver Detail','/cleverpay/drivers/:id'))+
-  sub('Check & Verification flow')+row(n('Add New Check','/cleverpay/new')+arr()+n('Username Gen','/cleverpay/username')+arr()+n('Doc Upload','/cleverpay/documents')+arr()+n('Expiry Tracker','/cleverpay/expiries'))+
+  sub('Check & Verification flow')+row(n('Add New Check','/cleverpay/new')+arr()+n('Username Gen','/cleverpay/username','done')+arr()+n('Doc Upload','/cleverpay/documents','done')+arr()+n('Expiry Tracker','/cleverpay/expiries'))+
   sub('RAG Status')+row(n('Blocked Drivers','/cleverpay/blocked')+n('RAG Board','/cleverpay/rag','prog')+n('Clever Checked','/cleverpay/checked','done'))+
   sub('Missing items & alerts')+row(n('Missing Info Queue','/cleverpay/missing')+n('Notifications','/cleverpay/notifications')+n('Audit Log','/cleverpay/audit'))+
-  sub('Driver self-service')+row(n('My Status','/driver/compliance-status')+n('Upload Docs','/driver/upload-documents')+n('Block Reason','/driver/compliance-blocked')+n('Clever Checked ✓','/driver/clever-checked'))
+  sub('Driver self-service')+row(n('My Status','/driver/compliance-status','prog')+n('Upload Docs','/driver/upload-documents')+n('Block Reason','/driver/compliance-blocked')+n('Clever Checked ✓','/driver/clever-checked'))
 );
 
 h+='</div>';
@@ -109,5 +109,5 @@ h+=row(
   n('CleverPay Section','19 items')+arr()+n('Shared System','12 items')
 );
 
-h+='<div class="note">HAF System Page Flow Map · OTIS · 7 July 2026 · 134 pages tracked · All statuses reflect V1 brief</div>';
+h+='<div class="note">HAF System Page Flow Map · OTIS · 8 July 2026 · 134 pages tracked · All statuses reflect V1 brief</div>';
 p.innerHTML=h;
